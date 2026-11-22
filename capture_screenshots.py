@@ -1,5 +1,5 @@
 """
-Capture 4 High-Resolution Screenshots of Upgraded Medical-FinTech UI
+Capture High-Resolution Screenshots of Upgraded Full-Width Medical-FinTech UI
 DocuClaim | Team PromptCraft | PE-B13-57
 """
 
@@ -23,21 +23,23 @@ def capture_all_views():
         page.wait_for_selector(".top-header-bar", timeout=30000)
         print("Page loaded successfully.")
 
-        # --- VIEW 1: Dashboard (Triage & Dispute) ---
-        print("Capturing View 1: Dashboard...")
+        # --- VIEW 1: Dashboard Top (Header, 3 KPIs & Section 1 Input) ---
+        print("Capturing View 1: Dashboard Top...")
         page.locator("[data-testid='stSidebar'] label:has-text('Dashboard')").click()
         time.sleep(2)
-        
-        # Expand Grievance Appeal Letter so it is visible
-        expander = page.locator("details summary:has-text('View Formal Grievance Appeal Letter')")
-        if expander.count() > 0:
-            expander.first.click()
-            time.sleep(1)
-
         page.evaluate("window.scrollTo(0, 0)")
         time.sleep(1)
         page.screenshot(path="screenshots/01_dashboard.png", full_page=False)
         print("Saved screenshots/01_dashboard.png")
+
+        # --- VIEW 1b: Dashboard Section 3 (Deduction Audit & Resolution Table) ---
+        print("Capturing View 1b: Section 3 Deduction Audit Table...")
+        sec3 = page.locator('div[data-testid="stVerticalBlock"]:has(> div.element-container .card-heading:has-text("Section 3"))')
+        if sec3.count() > 0:
+            sec3.first.scroll_into_view_if_needed()
+            time.sleep(1)
+            page.screenshot(path="screenshots/01b_deduction_audit.png", full_page=False)
+            print("Saved screenshots/01b_deduction_audit.png")
 
         # --- VIEW 2: Semantic Clause Retriever ---
         print("Capturing View 2: Semantic Clause Retriever...")
@@ -67,7 +69,7 @@ def capture_all_views():
         print("Saved screenshots/04_benchmark_eval.png")
 
         browser.close()
-        print("All 4 fresh screenshots captured successfully!")
+        print("All fresh screenshots captured successfully!")
 
 if __name__ == "__main__":
     capture_all_views()
