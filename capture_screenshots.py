@@ -1,6 +1,6 @@
 """
-Capture updated 4-page UI screenshots for DocuClaim
-Team PromptCraft | PE-B13-57
+Capture 4 High-Resolution Screenshots of Upgraded Medical-FinTech UI
+DocuClaim | Team PromptCraft | PE-B13-57
 """
 
 import time
@@ -11,6 +11,7 @@ def capture_all_views():
     os.makedirs("screenshots", exist_ok=True)
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
+        # Desktop resolution 1440x900, 2x scale for crisp retina display
         context = browser.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=2)
         page = context.new_page()
 
@@ -22,11 +23,17 @@ def capture_all_views():
         page.wait_for_selector(".top-header-bar", timeout=30000)
         print("Page loaded successfully.")
 
-        # --- VIEW 1: Dashboard ---
+        # --- VIEW 1: Dashboard (Triage & Dispute) ---
         print("Capturing View 1: Dashboard...")
-        # Ensure 'Dashboard' radio is selected
         page.locator("[data-testid='stSidebar'] label:has-text('Dashboard')").click()
         time.sleep(2)
+        
+        # Expand Grievance Appeal Letter so it is visible
+        expander = page.locator("details summary:has-text('View Formal Grievance Appeal Letter')")
+        if expander.count() > 0:
+            expander.first.click()
+            time.sleep(1)
+
         page.evaluate("window.scrollTo(0, 0)")
         time.sleep(1)
         page.screenshot(path="screenshots/01_dashboard.png", full_page=False)
