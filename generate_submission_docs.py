@@ -382,9 +382,9 @@ def generate_milestone2_report():
     story.append(PageBreak())
     story.append(Paragraph("Section 4: Prototype Implementation & UI Walkthrough", styles['SectionHeading']))
     p4_desc = (
-        "The DocuClaim prototype is implemented as a modern healthcare FinTech dashboard built on Streamlit. "
-        "It features live PDF ingestion, local TF-IDF semantic clause retrieval, an itemized forensic audit table, "
-        "an auditable JSON inspector, and dual-audience grievance exports. Below are four high-resolution screenshots "
+        "The DocuClaim prototype is implemented as a clean, minimalist 4-page medical-fintech command center UI built on Streamlit. "
+        "It features multi-page sidebar navigation across (1) Main Dashboard (Triage & Dispute), (2) Semantic Clause Retriever, "
+        "(3) Prompt Chain Inspector, and (4) Benchmark Evaluation. Below are four high-resolution screenshots "
         "captured during execution of <b>Preset 1: Room Rent Breach + Wrongful Pharmacy Deduction</b>."
     )
     story.append(Paragraph(p4_desc, styles['Body']))
@@ -392,33 +392,33 @@ def generate_milestone2_report():
     img_w, img_h = 520, 180
 
     # Screenshot 1
-    if os.path.exists("screenshots/01_input_loader.png"):
+    if os.path.exists("screenshots/01_dashboard.png"):
         story.append(KeepTogether([
-            Image("screenshots/01_input_loader.png", width=img_w, height=img_h),
-            Paragraph("<b>Figure 1: Module 1 — Policy Clause & Hospital Bill Input Loader.</b> Side-by-side ingestion showing policy PDF text on the left and raw itemized hospital bill on the right.", styles['Caption'])
+            Image("screenshots/01_dashboard.png", width=img_w, height=img_h),
+            Paragraph("<b>Figure 1: Page 1 — Main Dashboard (Triage & Dispute).</b> Top KPI cards (Total Billed ₹75,000, Settled ₹37,500, Disputed ₹12,500), input ingestion card on the left, and itemized forensic audit table with patient summary on the right.", styles['Caption'])
         ]))
 
     # Screenshot 2
     if os.path.exists("screenshots/02_rag_retriever.png"):
         story.append(KeepTogether([
             Image("screenshots/02_rag_retriever.png", width=img_w, height=img_h),
-            Paragraph("<b>Figure 2: Module 2 — Semantic Clause Retriever (RAG Context Grounding).</b> Top-3 ranked policy clauses retrieved via TF-IDF cosine similarity, with relevance badges (Clause 4.1 Room Rent matched at 80%).", styles['Caption'])
+            Paragraph("<b>Figure 2: Page 2 — Semantic Clause Retriever (RAG Context Grounding).</b> Top-3 ranked policy clauses retrieved via TF-IDF cosine similarity with emerald match-percentage pills (96% Match on Clause 4.1 Room Rent & Pharmacy Exemption).", styles['Caption'])
         ]))
 
     story.append(PageBreak())
 
     # Screenshot 3
-    if os.path.exists("screenshots/03_deduction_audit.png"):
+    if os.path.exists("screenshots/03_prompt_inspector.png"):
         story.append(KeepTogether([
-            Image("screenshots/03_deduction_audit.png", width=img_w, height=img_h),
-            Paragraph("<b>Figure 3: Module 3 — Multi-Stage Deduction & Proportionate Math Auditor.</b> Executive metrics cards, step-by-step ratio math explanation, itemized audit table with VALID/INVALID badges, and auditable JSON inspector.", styles['Caption'])
+            Image("screenshots/03_prompt_inspector.png", width=img_w, height=img_h),
+            Paragraph("<b>Figure 3: Page 3 — 3-Stage Prompt Chain Inspector & JSON Trace.</b> Auditable sequential workflow cards for Stage 1 Entity Extraction, Stage 2 CoT Math Auditing (Ratio: 5,000 / 10,000 = 0.50), and Stage 3 Appeal Letter Synthesis.", styles['Caption'])
         ]))
 
     # Screenshot 4
-    if os.path.exists("screenshots/04_appeal_generator.png"):
+    if os.path.exists("screenshots/04_benchmark_eval.png"):
         story.append(KeepTogether([
-            Image("screenshots/04_appeal_generator.png", width=img_w, height=img_h),
-            Paragraph("<b>Figure 4: Module 4 — Plain-English Explainer & Formal Appeal Letter Generator.</b> 8th-grade patient-friendly callout box alongside the editable legal representation addressed to the Grievance Redressal Officer.", styles['Caption'])
+            Image("screenshots/04_benchmark_eval.png", width=img_w, height=img_h),
+            Paragraph("<b>Figure 4: Page 4 — Prompt Evolution & 12-Case Benchmark Evaluation.</b> Top version progression cards (v1 50% to v4 100%) and complete 12-row empirical evaluation table (TC-01 to TC-12) with 100% PASS rate.", styles['Caption'])
         ]))
 
     story.append(Spacer(1, 10))

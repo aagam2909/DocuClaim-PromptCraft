@@ -18,38 +18,36 @@ DocuClaim automates the forensic review process:
 
 ---
 
-## 🏗️ 4-Module System Architecture
+## 🏗️ 4-Page Medical-FinTech Command Center Architecture
 
-The application interface is structured into four core modules:
+DocuClaim's interface is structured as a minimalist medical-fintech command center featuring seamless sidebar navigation across four specialized views:
 
 ```mermaid
 flowchart LR
-    M1["Module 1: Policy & Bill Input Loader"] --> M2["Module 2: Semantic Clause Retriever (RAG)"]
-    M2 --> M3["Module 3: Multi-Stage Deduction & Math Auditor"]
-    M3 --> M4["Module 4: Plain-English Explainer & Appeal Generator"]
+    V1["1. Dashboard (Triage & Dispute)"] --> V2["2. Semantic Clause Retriever (RAG)"]
+    V2 --> V3["3. Prompt Chain Inspector (JSON Trace)"]
+    V3 --> V4["4. Benchmark Evaluation (12 Cases)"]
 ```
 
-### Module 1: Policy Clause & Hospital Bill Input Loader
-- **Dual Side-by-Side Ingestion**:
-  - **Left Column**: Policy document loader supporting `.pdf` drag-and-drop extraction via `pypdf` or direct editing of pre-filled standard clauses (Clause 4.1 Room Rent & Pharmacy Exemption, Clause 4.2 ICU Cap, Clause 7.1 Accidental Waiver, Clause 7.2 36-Month PED Waiting Period, Clause 8.4 Grievance Redressal).
-  - **Right Column**: Itemized hospital bill and TPA settlement sheet text area with line-item breakdowns, room rent tariffs, billed/settled amounts, and deduction remarks.
+### 1. Dashboard (Triage & Dispute)
+- **Top Row KPI Cards**: Immediate executive visibility into `Total Billed` (e.g. ₹75,000), `Total Settled` (e.g. ₹37,500), and `Disputed / Recoverable Amount` highlighted in crimson (e.g. ₹12,500).
+- **Split Ingestion & Resolution Layout**:
+  - **Left Card (Document Context & Input)**: Policy PDF uploader (`pypdf` parser) with pre-filled clauses (4.1, 4.2, 7.1, 7.2, 8.4), itemized hospital bill text area, and primary **"Run Claim Audit"** trigger.
+  - **Right Card (Deduction Audit & Resolution)**: Itemized forensic audit table with color-coded status badges (`VALID` emerald, `INVALID` crimson, `INSUFFICIENT_CLAUSE_DATA` amber), step-by-step ratio math explanation, 8th-grade patient plain-English summary, and expandable **Grievance Appeal Letter** editor with one-click `.txt` download (`DocuClaim_Grievance_Appeal.txt`).
 
-### Module 2: Semantic Clause Retriever (RAG Context Grounding)
-- **Local Chunking & TF-IDF Vectorization**: Policy text is chunked into semantic clause units and indexed using `scikit-learn` TF-IDF and Cosine Similarity.
-- **Top-3 Grounded Relevance**: Ranks and displays the Top-3 most relevant clauses against the hospital bill with percentage relevance badges (e.g., `Clause 4.1 Room Rent [Relevance: 88%]`) to anchor the downstream audit.
+### 2. Semantic Clause Retriever (RAG Context Grounding)
+- **Keyword Search & Filter**: Real-time search across extracted policy clauses.
+- **Top-3 Grounded Relevance Cards**: Evaluates hospital bill queries against policy chunks via TF-IDF vectorization and cosine similarity, rendering match-percentage badges (e.g. `96% Match` on Clause 4.1 Room Rent & Pharmacy Exemption) with source metadata and word counts.
 
-### Module 3: Multi-Stage Deduction & Proportionate Math Auditor
-- **Executive Metric Cards**: Displays `Total Billed`, `Total Settled`, `Disputed / Recoverable Amount`, and `Proportionate Ratio`.
-- **Itemized Audit Table**: Renders every line item with color-coded status badges:
-  - `VALID` (Green): Contractual deductions (e.g., room rent cap or ICU sub-limit).
-  - `INVALID` (Red): Unlawful deductions (e.g., proportionate cuts applied to exempt pharmacy lines, or PED rejections past the 36-month waiting period).
-  - `INSUFFICIENT_CLAUSE_DATA` (Amber): Safety guardrail triggered when a billed item (e.g., Air Ambulance) has no corresponding clause in the policy wording.
-- **Auditable Prompt Chain Inspector**: Expandable viewer revealing the raw intermediate JSON outputs from **Prompt 1 (Entity Extractor)** and **Prompt 2 (CoT Math Auditor)**.
+### 3. Prompt Chain Inspector
+- **Sequential 3-Stage Trace Cards**: Visualizes auditable handoffs with emerald `Verified` badges:
+  - **Prompt 1 (Entity Extractor)**: Standardized financial JSON schema (`sum_insured`, `eligible_room_limit`, `actual_room_rent`, `line_items`).
+  - **Prompt 2 (CoT Math Auditor)**: Mathematical ratio calculation (`5,000 / 10,000 = 0.50`), exemption enforcement, and audited line items.
+  - **Prompt 3 (Dual-Audience Synthesizer)**: Patient explanation and formal legal grievance letter preview.
 
-### Module 4: Plain-English Explainer & Formal Appeal Letter Generator
-- **Patient-Friendly Summary**: A compassionate, jargon-free explanation written at an 8th-grade reading level highlighting what was charged, why cuts were unfair, and what money can be reclaimed.
-- **Formal Grievance Redressal Appeal Letter**: A ready-to-mail legal representation addressed to the Grievance Redressal Officer (GRO) citing exact clause numbers, IRDAI master circular standards, and step-by-step arithmetic ratio proofs.
-- **One-Click Export**: Downloadable as `DocuClaim_Grievance_Appeal.txt` with an in-app clipboard copy option.
+### 4. Benchmark Evaluation
+- **Top Row Version Cards**: Quantifies prompt engineering progression: `v1 Baseline (50%)`, `v2 Role+Schema (67%)`, `v3 Few-Shot+Guardrails (92%)`, and `v4 Final Chained (100%)`.
+- **12-Case Benchmark Table**: Renders the full `TC-01` through `TC-12` test suite loaded from `data/synthetic_test_cases.json` showing 100% `PASS` status.
 
 ---
 
