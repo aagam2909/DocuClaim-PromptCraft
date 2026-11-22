@@ -1,0 +1,18 @@
+capture_screenshots.py
+  h_b6895d6280a977 2-3,14,26,30-36
+submission_docs/PromptCraft_Milestone2_Report.pdf
+  h_b6895d6280a977 25,29,38,42,46,50,54,58,84,96,121,149,153,156,173-189,193,201
+submission_docs/PromptCraft_Synopsis.pdf
+  h_b6895d6280a977 35,65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "233d8fde0c122143233f749bba7dc4ecf00c6f7f",
+  "prompts": {},
+  "humans": {
+    "h_b6895d6280a977": {
+      "author": "aagam2909 <aagamjain1325@gmail.com>"
+    }
+  }
+}
