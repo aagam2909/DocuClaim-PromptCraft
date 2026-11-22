@@ -1,0 +1,36 @@
+.gitignore
+  h_b6895d6280a977 1-6
+.streamlit/config.toml
+  h_b6895d6280a977 1-6
+README.md
+  h_b6895d6280a977 1-149
+app.py
+  h_b6895d6280a977 1-1391
+capture_screenshots.py
+  h_b6895d6280a977 1-83
+data/synthetic_test_cases.json
+  h_b6895d6280a977 1-461
+generate_submission_docs.py
+  h_b6895d6280a977 1-706
+prompts/prompt_iterations_v1_to_v4.md
+  h_b6895d6280a977 1-289
+requirements.txt
+  h_b6895d6280a977 1-5
+sample_policy.pdf
+  h_b6895d6280a977 1-74
+submission_docs/PromptCraft_Milestone2_Report.pdf
+  h_b6895d6280a977 1-196
+submission_docs/PromptCraft_Synopsis.pdf
+  h_b6895d6280a977 1-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d03fd2f19ed55ae817582874c1a08b5af7ae5416",
+  "prompts": {},
+  "humans": {
+    "h_b6895d6280a977": {
+      "author": "aagam2909 <aagamjain1325@gmail.com>"
+    }
+  }
+}
