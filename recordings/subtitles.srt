@@ -1,0 +1,103 @@
+1
+00:00:01,000 --> 00:00:05,500
+DocuClaim: AI Health Insurance Policy Triage & Dispute Assistant
+Team PromptCraft (PE-B13-57) | Aagam Jain, Riya Tyagi, Shubhashni Kant
+
+2
+00:00:06,000 --> 00:00:11,500
+Page 1: Main Dashboard (Triage & Dispute)
+Top KPI Cards: Total Billed ₹75,000 | Settled ₹37,500 | Disputed ₹12,500
+
+3
+00:00:12,000 --> 00:00:18,500
+Document Ingestion: Left Card houses Policy PDF uploader & editable clauses (4.1, 4.2, 7.1, 7.2, 8.4)
+Right Card houses itemized hospital bill and TPA settlement sheet
+
+4
+00:00:19,000 --> 00:00:26,500
+Proportionate Math Ratio: Sum Insured ₹5,00,000 | 1% Daily Room Cap = ₹5,000/day
+Deluxe Tariff ₹10,000/day -> Ratio = 5,000 / 10,000 = 0.50 (50% cut on associated medical fees)
+
+5
+00:00:27,000 --> 00:00:35,000
+Forensic Itemized Audit: Room rent & surgeon fees are VALID 50% deductions
+Pharmacy & Medicines (₹25,000) cut by 50% is INVALID! Recoverable: ₹12,500
+
+6
+00:00:35,500 --> 00:00:43,500
+Statutory Exemption Enforced: Clause 4.1 explicitly exempts pharmacy & consumables
+IRDAI Master Circular strictly forbids proportionate room cuts on fixed pharmacy costs
+
+7
+00:00:44,000 --> 00:00:51,500
+Patient-Friendly Summary (8th-Grade Reading Level)
+Explains in clear terms what happened, why the cut was wrong, and how to reclaim ₹12,500
+
+8
+00:00:52,000 --> 00:01:00,500
+Formal Grievance Redressal Appeal Representation addressed to GRO & TPA
+Cites Claim ID, Policy No, Clause 4.1 exemption, math ratio proofs, and 15-day timeline
+
+9
+00:01:01,000 --> 00:01:08,000
+Demonstrating Preset 2: Pre-Existing Disease (PED) 40-Month Continuous Coverage
+TPA wrongfully repudiated entire claim of ₹85,000 citing Clause 7.2 waiting period
+
+10
+00:01:08,500 --> 00:01:17,500
+Audit Verdict: Policy tenure (40 months) exceeds mandatory 36-month waiting period!
+Repudiation is INVALID under Clause 7.2 & 8.1 Incontestability. Recoverable: ₹85,000
+
+11
+00:01:18,000 --> 00:01:25,500
+Demonstrating Preset 4: Missing Air Ambulance Clause Edge Case
+Bill includes ₹1,50,000 aeromedical evacuation fee not present in base policy wording
+
+12
+00:01:26,000 --> 00:01:34,500
+Safety Guardrail Triggered: Status marked as INSUFFICIENT_CLAUSE_DATA
+DocuClaim strictly refuses to hallucinate coverage without add-on policy schedule
+
+13
+00:01:35,000 --> 00:01:41,000
+Resetting back to Preset 1 to inspect remaining command center modules
+
+14
+00:01:41,500 --> 00:01:48,500
+Page 2: Semantic Clause Retriever (RAG Context Grounding)
+Local TF-IDF Vectorization & Cosine Similarity for instantaneous, zero-latency retrieval
+
+15
+00:01:49,000 --> 00:01:57,500
+Top-3 Retrieved Policy Clauses with Match Percentage Badges
+Clause 4.1 Room Rent (96% Match), Clause 4.2 ICU Cap (89%), Clause 8.4 GRO (84%)
+
+16
+00:01:58,000 --> 00:02:05,500
+Page 3: Prompt Chain Inspector (Auditable 3-Stage Sequential Trace)
+Visualizes isolated cognitive stages with strict negative constraints & verified JSON handoffs
+
+17
+00:02:06,000 --> 00:02:13,500
+Stage 1: Entity Extractor JSON (Sum Insured, Tariffs, Room Limits, Itemized Lines)
+Stage 2: CoT Math Auditor JSON (Proportionate Ratio proof: 5,000 / 10,000 = 0.50)
+
+18
+00:02:14,000 --> 00:02:21,500
+Stage 3: Dual-Audience Grievance & Appeal Synthesizer JSON
+Bifurcates patient plain-English summary from formal GRO legal representation
+
+19
+00:02:22,000 --> 00:02:30,500
+Page 4: Benchmark Evaluation & Prompt Evolution Matrix
+Progressive gains: v1 Baseline (50%) -> v2 Role (67%) -> v3 Few-Shot (92%) -> v4 Chained (100%)
+
+20
+00:02:31,000 --> 00:02:39,000
+12-Case Benchmark Matrix (TC-01 to TC-12): 100% PASS Rate
+99.4% Mathematical Accuracy, 100% Exemption Compliance, <1% Hallucination Rate
+
+21
+00:02:39,500 --> 00:02:47,000
+DocuClaim: Enterprise Health Insurance Triage & Dispute Assistant
+Team PromptCraft | PE-B13-57 | Aagam Jain, Riya Tyagi, Shubhashni Kant
