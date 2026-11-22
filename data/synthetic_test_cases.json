@@ -1,0 +1,461 @@
+[
+  {
+    "id": "TC-01",
+    "preset_id": "preset_1",
+    "name": "Preset 1: Room Rent Breach + Wrongful Pharmacy Deduction (Disputable)",
+    "category": "Proportionate Deduction & Exemptions",
+    "description": "Insured breached 1% room rent limit, but insurer wrongfully applied proportionate cuts to exempt pharmacy items.",
+    "policy_text": "Clause 4.1: Room Rent, Boarding & Nursing Expenses:\nRoom Rent, boarding, and nursing expenses incurred at the hospital are capped at 1% of the Sum Insured per day. If the insured occupies a room category whose daily tariff exceeds this eligible limit, the associated medical expenses (including doctor/surgeon consultation fees, nursing fees, and operation theatre charges) shall be subject to proportionate deduction according to the ratio: (Eligible Daily Room Rent Limit / Actual Daily Room Rent Occupied).\nEXPLICIT EXEMPTION: Proportionate deduction shall NOT apply to the cost of pharmacy, medicines, medical consumables, diagnostic investigations, and surgical implants/disposables. These items shall be settled at actual cost subject to overall Sum Insured.\n\nClause 4.2: Intensive Care Unit (ICU) Charges:\nICU / ICCU expenses are capped at 2% of the Sum Insured per day.\n\nClause 7.1: Waiting Periods:\nA initial waiting period of 30 days applies to all medical admissions except accidental emergencies.\n\nClause 7.2: Pre-Existing Disease (PED) Waiting Period:\nExpenses related to the treatment of a Pre-Existing Disease (PED) and its direct complications shall be excluded until 36 continuous months of coverage have elapsed under this policy.\n\nClause 8.4: Grievance Redressal Mechanism:\nThe insured may submit a formal representation to the Grievance Redressal Officer (GRO) citing policy number, claim number, and disputed itemized heads. Decisions shall be communicated within 15 working days as mandated by IRDAI regulations.",
+    "bill_text": "PATIENT NAME: Rajesh Verma\nCLAIM NUMBER: CLM-2024-88491\nPOLICY NUMBER: POL-HEALTH-99201\nPOLICY TENURE: 24 Months\nSUM INSURED: INR 5,00,000\nHOSPITAL: Apollo Multispeciality Hospital\nADMISSION DATE: 12-Oct-2024\nDISCHARGE DATE: 15-Oct-2024 (3 Days)\nROOM CATEGORY OCCUPIED: Deluxe Private Room (Tariff: INR 10,000 / day)\nELIGIBLE ROOM RENT LIMIT: INR 5,000 / day (1% of Sum Insured)\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Room Rent & Nursing (3 days @ INR 10,000/day): Billed = INR 30,000 | Settled = INR 15,000 | Deducted = INR 15,000 (TPA Remark: Room rent cap breach proportionate deduction 50%)\n2. Surgeon & Specialist Consultation Fees: Billed = INR 20,000 | Settled = INR 10,000 | Deducted = INR 10,000 (TPA Remark: Associated medical fee proportionate reduction 50%)\n3. Pharmacy & Inpatient Medicines: Billed = INR 25,000 | Settled = INR 12,500 | Deducted = INR 12,500 (TPA Remark: Proportionate reduction 50% applied across all heads)\n\nTOTAL BILLED: INR 75,000\nTOTAL SETTLED: INR 37,500\nTOTAL DEDUCTED: INR 37,500",
+    "expected_audit": {
+      "sum_insured": 500000.0,
+      "eligible_room_limit": 5000.0,
+      "actual_room_rent": 10000.0,
+      "ratio": 0.5,
+      "total_billed": 75000.0,
+      "total_settled": 37500.0,
+      "total_deducted": 37500.0,
+      "total_recoverable_amount": 12500.0,
+      "line_items": [
+        {
+          "item": "Room Rent & Nursing",
+          "billed": 30000.0,
+          "settled": 15000.0,
+          "deducted": 15000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.1",
+          "reasoning": "Actual room rent of INR 10,000/day exceeds eligible limit of INR 5,000/day. Insurer correctly applied the 1% cap (3 x INR 5,000 = INR 15,000)."
+        },
+        {
+          "item": "Surgeon & Specialist Consultation Fees",
+          "billed": 20000.0,
+          "settled": 10000.0,
+          "deducted": 10000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.1",
+          "reasoning": "Associated medical fees are subject to proportionate deduction ratio of 5,000 / 10,000 = 0.50 (50%). Settling INR 10,000 of INR 20,000 is contractually valid."
+        },
+        {
+          "item": "Pharmacy & Inpatient Medicines",
+          "billed": 25000.0,
+          "settled": 12500.0,
+          "deducted": 12500.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 4.1 (Explicit Exemption)",
+          "reasoning": "Clause 4.1 explicitly exempts pharmacy, medicines, and medical consumables from proportionate cuts. The 50% deduction of INR 12,500 is wrongful and disputable."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-02",
+    "preset_id": "preset_2",
+    "name": "Preset 2: Pre-Existing Disease (PED) 40-Month Tenure (Invalid Rejection)",
+    "category": "Pre-Existing Diseases (PED)",
+    "description": "Claim repudiated under 36-month PED clause, but policy has been active for 40 continuous months.",
+    "policy_text": "Clause 4.1: Room Rent & Nursing Expenses:\nRoom rent capped at 1% of Sum Insured per day.\n\nClause 7.2: Pre-Existing Disease (PED) Waiting Period:\nExpenses related to the treatment of a Pre-Existing Disease (PED) and its direct complications shall be excluded until thirty-six (36) months of continuous coverage have elapsed since the date of inception of the first policy with the Company.\n\nClause 8.1: Incontestability & Continuous Renewal:\nAfter continuous coverage for thirty-six (36) months, no claim shall be repudiated on grounds of pre-existing disease unless fraudulent misrepresentation is established.\n\nClause 8.4: Grievance Redressal Mechanism:\nThe insured may submit a formal grievance to the Grievance Redressal Officer within 30 days of repudiation.",
+    "bill_text": "PATIENT NAME: Sunita Sharma\nCLAIM NUMBER: CLM-2024-41092\nPOLICY NUMBER: POL-FAM-77102\nPOLICY TENURE: 40 Months (Continuous renewal since June 2021)\nSUM INSURED: INR 5,00,000\nHOSPITAL: Fortis Escorts Heart Institute\nADMISSION DATE: 02-Nov-2024\nDISCHARGE DATE: 05-Nov-2024\nDIAGNOSIS: Unstable Angina with Type-2 Diabetes Mellitus & Hypertension\nROOM CATEGORY OCCUPIED: Standard Single Room (Tariff: INR 4,500 / day)\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Hospital Inpatient Package & Medical Care: Billed = INR 45,000 | Settled = INR 0 | Deducted = INR 45,000 (TPA Remark: Repudiated under Clause 7.2 - Pre-Existing Condition waiting period)\n2. Cardiac Stenting Procedure & Angioplasty Consumables: Billed = INR 40,000 | Settled = INR 0 | Deducted = INR 40,000 (TPA Remark: Repudiated under Clause 7.2 - Pre-Existing Condition waiting period)\n\nTOTAL BILLED: INR 85,000\nTOTAL SETTLED: INR 0\nTOTAL DEDUCTED: INR 85,000",
+    "expected_audit": {
+      "sum_insured": 500000.0,
+      "eligible_room_limit": 5000.0,
+      "actual_room_rent": 4500.0,
+      "ratio": 1.0,
+      "total_billed": 85000.0,
+      "total_settled": 0.0,
+      "total_deducted": 85000.0,
+      "total_recoverable_amount": 85000.0,
+      "line_items": [
+        {
+          "item": "Hospital Inpatient Package & Medical Care",
+          "billed": 45000.0,
+          "settled": 0.0,
+          "deducted": 45000.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 7.2 & Clause 8.1",
+          "reasoning": "Policy tenure is 40 months, which strictly exceeds the 36-month PED waiting period specified in Clause 7.2. Total repudiation is unlawful."
+        },
+        {
+          "item": "Cardiac Stenting Procedure & Angioplasty Consumables",
+          "billed": 40000.0,
+          "settled": 0.0,
+          "deducted": 40000.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 7.2 & Clause 8.1",
+          "reasoning": "The 36-month waiting period has elapsed. As per Clause 8.1, claim cannot be denied on PED grounds after 36 months of continuous coverage."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-03",
+    "preset_id": "preset_3",
+    "name": "Preset 3: Valid ICU Sub-Limit Cap Deduction (Valid Deduction)",
+    "category": "Sub-Limits & Caps",
+    "description": "Patient stayed in ICU with daily tariff exceeding 2% Sum Insured limit. Insurer deduction is contractual and valid.",
+    "policy_text": "Clause 4.1: Room Rent Limit:\nRoom rent for normal rooms is capped at 1% of Sum Insured per day.\n\nClause 4.2: Intensive Care Unit (ICU) Charges:\nIntensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU) expenses, including nursing and monitoring charges, are capped at a maximum of 2% of the Sum Insured per day. Any charges incurred in excess of this per-diem limit shall be borne entirely by the insured.\n\nClause 8.4: Grievance Redressal:\nPolicyholders may appeal disputes regarding financial settlements within 30 days.",
+    "bill_text": "PATIENT NAME: Vikram Malhotra\nCLAIM NUMBER: CLM-2024-31902\nPOLICY NUMBER: POL-IND-44120\nPOLICY TENURE: 18 Months\nSUM INSURED: INR 4,00,000\nHOSPITAL: Max Super Speciality Hospital\nADMISSION DATE: 18-Sep-2024\nDISCHARGE DATE: 22-Sep-2024 (4 Days ICU)\nROOM CATEGORY OCCUPIED: Super-Speciality ICU (Tariff: INR 12,000 / day)\nELIGIBLE ICU LIMIT: INR 8,000 / day (2% of Sum Insured INR 4,00,000)\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. ICU Daily Tariff & Monitoring (4 days @ INR 12,000/day): Billed = INR 48,000 | Settled = INR 32,000 | Deducted = INR 16,000 (TPA Remark: Capped at 2% Sum Insured = INR 8,000/day x 4 days)\n2. Intensivist & Critical Care Doctor Consultation: Billed = INR 10,000 | Settled = INR 10,000 | Deducted = INR 0 (TPA Remark: Settled in full)\n\nTOTAL BILLED: INR 58,000\nTOTAL SETTLED: INR 42,000\nTOTAL DEDUCTED: INR 16,000",
+    "expected_audit": {
+      "sum_insured": 400000.0,
+      "eligible_room_limit": 8000.0,
+      "actual_room_rent": 12000.0,
+      "ratio": 1.0,
+      "total_billed": 58000.0,
+      "total_settled": 42000.0,
+      "total_deducted": 16000.0,
+      "total_recoverable_amount": 0.0,
+      "line_items": [
+        {
+          "item": "ICU Daily Tariff & Monitoring",
+          "billed": 48000.0,
+          "settled": 32000.0,
+          "deducted": 16000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.2",
+          "reasoning": "Sum Insured is INR 4,00,000, setting the 2% daily ICU cap at INR 8,000. For 4 days, eligible limit is 4 x 8,000 = INR 32,000. The INR 16,000 deduction is strictly contractual."
+        },
+        {
+          "item": "Intensivist & Critical Care Doctor Consultation",
+          "billed": 10000.0,
+          "settled": 10000.0,
+          "deducted": 0.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.2",
+          "reasoning": "Settled in full as billed."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-04",
+    "preset_id": "preset_4",
+    "name": "Preset 4: Missing Air Ambulance Clause Edge Case (Insufficient Data Guardrail)",
+    "category": "Guardrails & Missing Clauses",
+    "description": "Bill includes emergency air ambulance transfer, but policy document contains no air evacuation terms.",
+    "policy_text": "Clause 4.1: Room Rent, Boarding & Nursing Expenses:\nRoom Rent capped at 1% of Sum Insured per day. Proportionate deductions apply to associated medical expenses in case of limit breach.\n\nClause 4.2: ICU Charges:\nICU expenses capped at 2% of Sum Insured per day.\n\nClause 7.1: Waiting Periods:\nStandard 30-day waiting period from policy inception except accidental injuries.\n\nClause 7.2: Pre-Existing Disease Waiting Period:\n36-month waiting period for pre-existing ailments.\n\nClause 8.4: Grievance Redressal:\nGrievance filing with the insurance ombudsman / GRO.",
+    "bill_text": "PATIENT NAME: Amitav Sen\nCLAIM NUMBER: CLM-2024-90118\nPOLICY NUMBER: POL-CORP-10294\nPOLICY TENURE: 14 Months\nSUM INSURED: INR 10,00,000\nHOSPITAL: Manipal Hospital, Bengaluru\nADMISSION DATE: 05-Oct-2024\nDISCHARGE DATE: 08-Oct-2024\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Hospital Inpatient Accommodation (3 days @ INR 6,000/day): Billed = INR 18,000 | Settled = INR 18,000 | Deducted = INR 0 (TPA Remark: Within 1% Sum Insured cap)\n2. Emergency Aeromedical Evacuation / Air Ambulance Transfer (Shimoga to Bengaluru): Billed = INR 1,50,000 | Settled = INR 0 | Deducted = INR 1,50,000 (TPA Remark: Repudiated - Non-standard expense)\n\nTOTAL BILLED: INR 1,68,000\nTOTAL SETTLED: INR 18,000\nTOTAL DEDUCTED: INR 1,50,000",
+    "expected_audit": {
+      "sum_insured": 1000000.0,
+      "eligible_room_limit": 10000.0,
+      "actual_room_rent": 6000.0,
+      "ratio": 1.0,
+      "total_billed": 168000.0,
+      "total_settled": 18000.0,
+      "total_deducted": 150000.0,
+      "total_recoverable_amount": 0.0,
+      "line_items": [
+        {
+          "item": "Hospital Inpatient Accommodation",
+          "billed": 18000.0,
+          "settled": 18000.0,
+          "deducted": 0.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.1",
+          "reasoning": "Within the 1% Sum Insured limit (INR 10,000/day)."
+        },
+        {
+          "item": "Emergency Aeromedical Evacuation / Air Ambulance Transfer",
+          "billed": 150000.0,
+          "settled": 0.0,
+          "deducted": 150000.0,
+          "status": "INSUFFICIENT_CLAUSE_DATA",
+          "clause_cited": "Missing Policy Endorsement / Schedule",
+          "reasoning": "The provided policy extract contains no clause or sub-limit governing Air Ambulance / Aeromedical Evacuation. Guardrail enforced: Cannot determine validity without the complete Policy Schedule / Add-On Endorsement wording."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-05",
+    "preset_id": "preset_5",
+    "name": "Day Care Chemotherapy Procedure (Wrongful 24-Hour Stay Rejection)",
+    "category": "Day Care & Non-Medical",
+    "description": "Claim rejected on grounds that patient was not hospitalized for 24 continuous hours, ignoring Day Care clause.",
+    "policy_text": "Clause 2.1: Inpatient Hospitalisation:\nHospitalisation for a minimum period of 24 consecutive hours is mandatory for reimbursement eligibility, except for Day Care Procedures specified under Clause 5.1.\n\nClause 5.1: Day Care Procedures Covered:\nMedical treatments and/or surgical procedures undertaken under general or local anesthesia in a hospital/day care centre in less than 24 hours due to technological advancements are covered. Covered procedures include: Chemotherapy, Radiotherapy, Hemodialysis, Cataract surgery, and Lithotripsy.",
+    "bill_text": "PATIENT NAME: Meera Iyer\nCLAIM NUMBER: CLM-2024-55102\nPOLICY NUMBER: POL-IND-20019\nPOLICY TENURE: 36 Months\nSUM INSURED: INR 6,00,000\nHOSPITAL: Tata Memorial Cancer Hospital\nADMISSION DATE: 14-Aug-2024 (08:00 AM)\nDISCHARGE DATE: 14-Aug-2024 (04:00 PM - 8 Hours Duration)\nPROCEDURE: Infusional Chemotherapy Cycle 4\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Chemotherapy Infusion Charges & Daybed: Billed = INR 15,000 | Settled = INR 0 | Deducted = INR 15,000 (TPA Remark: Repudiated - Inpatient stay under 24 hours)\n2. Oncology Chemotherapy Drugs (Trastuzumab): Billed = INR 30,000 | Settled = INR 0 | Deducted = INR 30,000 (TPA Remark: Repudiated - Inpatient stay under 24 hours)\n\nTOTAL BILLED: INR 45,000\nTOTAL SETTLED: INR 0\nTOTAL DEDUCTED: INR 45,000",
+    "expected_audit": {
+      "sum_insured": 600000.0,
+      "eligible_room_limit": 6000.0,
+      "actual_room_rent": 0.0,
+      "ratio": 1.0,
+      "total_billed": 45000.0,
+      "total_settled": 0.0,
+      "total_deducted": 45000.0,
+      "total_recoverable_amount": 45000.0,
+      "line_items": [
+        {
+          "item": "Chemotherapy Infusion Charges & Daybed",
+          "billed": 15000.0,
+          "settled": 0.0,
+          "deducted": 15000.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 5.1",
+          "reasoning": "Chemotherapy is explicitly listed as an approved Day Care procedure under Clause 5.1, exempt from the 24-hour hospitalisation rule."
+        },
+        {
+          "item": "Oncology Chemotherapy Drugs (Trastuzumab)",
+          "billed": 30000.0,
+          "settled": 0.0,
+          "deducted": 30000.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 5.1",
+          "reasoning": "Approved oncology day care drugs are fully covered under Clause 5.1. Repudiation is completely wrongful."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-06",
+    "preset_id": "preset_6",
+    "name": "Cataract Lens Sub-Limit Deduction (Valid Sub-Limit Cap)",
+    "category": "Sub-Limits & Caps",
+    "description": "Insurer capped cataract surgery at the contractually defined per-eye sub-limit.",
+    "policy_text": "Clause 4.6: Cataract Treatment Sub-Limit:\nThe Company liability for Cataract operation shall be restricted to actual expenses or INR 35,000 per eye (whichever is lower), inclusive of surgeon fees, OT charges, and Intraocular Lens (IOL) implant cost.\n\nClause 8.4: Grievance Redressal Mechanism:\nAppeals must be submitted to the Grievance Cell within 30 days.",
+    "bill_text": "PATIENT NAME: Harish Chawla\nCLAIM NUMBER: CLM-2024-67291\nPOLICY NUMBER: POL-SEN-88219\nPOLICY TENURE: 24 Months\nSUM INSURED: INR 5,00,000\nHOSPITAL: Centre for Sight, New Delhi\nPROCEDURE: Phacoemulsification with Foldable Toric IOL (Left Eye)\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Cataract Surgery Package & Foldable Toric Lens: Billed = INR 65,000 | Settled = INR 35,000 | Deducted = INR 30,000 (TPA Remark: Capped at Clause 4.6 Cataract sub-limit of INR 35,000 per eye)\n\nTOTAL BILLED: INR 65,000\nTOTAL SETTLED: INR 35,000\nTOTAL DEDUCTED: INR 30,000",
+    "expected_audit": {
+      "sum_insured": 500000.0,
+      "eligible_room_limit": 5000.0,
+      "actual_room_rent": 0.0,
+      "ratio": 1.0,
+      "total_billed": 65000.0,
+      "total_settled": 35000.0,
+      "total_deducted": 30000.0,
+      "total_recoverable_amount": 0.0,
+      "line_items": [
+        {
+          "item": "Cataract Surgery Package & Foldable Toric Lens",
+          "billed": 65000.0,
+          "settled": 35000.0,
+          "deducted": 30000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.6",
+          "reasoning": "Clause 4.6 explicitly restricts cataract expenses to INR 35,000 per eye. The deduction of INR 30,000 is contractually valid."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-07",
+    "preset_id": "preset_7",
+    "name": "Non-Medical Consumables Exclusion (Valid Exclusion)",
+    "category": "Day Care & Non-Medical",
+    "description": "Standard non-medical exclusions applied in accordance with IRDAI schedule of excluded expenses.",
+    "policy_text": "Clause 4.1: Room Rent capped at 1% of Sum Insured.\nClause 9.3: Excluded Expenses (Non-Medical Items):\nExpenses incurred towards items listed in Annexure 1 (Standard Non-Medical Exclusions) such as administrative charges, registration fees, sanitizers, disposable gloves, PPE kits, patient utility kits, and food/beverage expenses for attendants shall be excluded from claim liability.",
+    "bill_text": "PATIENT NAME: Sneha Kapoor\nCLAIM NUMBER: CLM-2024-11823\nPOLICY NUMBER: POL-HEALTH-33201\nPOLICY TENURE: 12 Months\nSUM INSURED: INR 3,00,000\nHOSPITAL: Ruby Hall Clinic, Pune\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Room & Nursing: Billed = INR 9,000 | Settled = INR 9,000 | Deducted = INR 0\n2. PPE Kits, Examination Gloves & Sanitizer: Billed = INR 4,500 | Settled = INR 0 | Deducted = INR 4,500 (TPA Remark: Excluded under Clause 9.3 Non-Medical Items)\n3. Hospital Administrative & Admission Processing Fee: Billed = INR 4,000 | Settled = INR 0 | Deducted = INR 4,000 (TPA Remark: Excluded under Clause 9.3)\n\nTOTAL BILLED: INR 17,500\nTOTAL SETTLED: INR 9,000\nTOTAL DEDUCTED: INR 8,500",
+    "expected_audit": {
+      "sum_insured": 300000.0,
+      "eligible_room_limit": 3000.0,
+      "actual_room_rent": 3000.0,
+      "ratio": 1.0,
+      "total_billed": 17500.0,
+      "total_settled": 9000.0,
+      "total_deducted": 8500.0,
+      "total_recoverable_amount": 0.0,
+      "line_items": [
+        {
+          "item": "Room & Nursing",
+          "billed": 9000.0,
+          "settled": 9000.0,
+          "deducted": 0.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.1",
+          "reasoning": "Within room rent limit."
+        },
+        {
+          "item": "PPE Kits, Examination Gloves & Sanitizer",
+          "billed": 4500.0,
+          "settled": 0.0,
+          "deducted": 4500.0,
+          "status": "VALID",
+          "clause_cited": "Clause 9.3",
+          "reasoning": "Disposables and sanitizers are non-payable under standard non-medical exclusions."
+        },
+        {
+          "item": "Hospital Administrative & Admission Processing Fee",
+          "billed": 4000.0,
+          "settled": 0.0,
+          "deducted": 4000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 9.3",
+          "reasoning": "Administrative fees are explicitly non-payable under Clause 9.3."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-08",
+    "preset_id": "preset_8",
+    "name": "Accidental Emergency Inpatient Treatment (Wrongful 30-Day Waiting Period Application)",
+    "category": "Pre-Existing Diseases (PED)",
+    "description": "Insurer rejected claim for emergency accident treatment citing 30-day waiting period, violating accident waiver.",
+    "policy_text": "Clause 7.1: Thirty (30) Days Waiting Period:\nA waiting period of 30 days from the inception date of the policy will be applicable to all hospitalisation claims. However, this 30-day waiting period shall NOT apply to claims arising out of Accidental Bodily Injury resulting from an external, violent, and visible event occurring post inception.",
+    "bill_text": "PATIENT NAME: Rohan Deshmukh\nCLAIM NUMBER: CLM-2024-78019\nPOLICY NUMBER: POL-NEW-19201\nPOLICY TENURE: 15 Days (Policy incepted on 01-Oct-2024)\nSUM INSURED: INR 5,00,000\nHOSPITAL: KEM Hospital, Mumbai\nADMISSION DATE: 16-Oct-2024\nDIAGNOSIS: Road Traffic Accident (RTA) - Compound Tibia Fracture\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Emergency Orthopaedic Reduction & External Fixator: Billed = INR 50,000 | Settled = INR 0 | Deducted = INR 50,000 (TPA Remark: Repudiated - Inception under 30 days Clause 7.1)\n2. Inpatient Surgical Consumables & Medicines: Billed = INR 25,000 | Settled = INR 0 | Deducted = INR 25,000 (TPA Remark: Repudiated - Inception under 30 days Clause 7.1)\n\nTOTAL BILLED: INR 75,000\nTOTAL SETTLED: INR 0\nTOTAL DEDUCTED: INR 75,000",
+    "expected_audit": {
+      "sum_insured": 500000.0,
+      "eligible_room_limit": 5000.0,
+      "actual_room_rent": 4000.0,
+      "ratio": 1.0,
+      "total_billed": 75000.0,
+      "total_settled": 0.0,
+      "total_deducted": 75000.0,
+      "total_recoverable_amount": 75000.0,
+      "line_items": [
+        {
+          "item": "Emergency Orthopaedic Reduction & External Fixator",
+          "billed": 50000.0,
+          "settled": 0.0,
+          "deducted": 50000.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 7.1 (Accidental Injury Waiver)",
+          "reasoning": "Clause 7.1 explicitly waives the 30-day initial waiting period for accidental bodily injuries. Repudiation is unlawful."
+        },
+        {
+          "item": "Inpatient Surgical Consumables & Medicines",
+          "billed": 25000.0,
+          "settled": 0.0,
+          "deducted": 25000.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 7.1 (Accidental Injury Waiver)",
+          "reasoning": "Injury resulting from road accident is exempt from waiting period under Clause 7.1. Entire deduction is recoverable."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-09",
+    "preset_id": "preset_9",
+    "name": "Senior Citizen Mandatory Co-Payment (Valid 10% Deduction)",
+    "category": "Copay & Co-Insurance",
+    "description": "Insurer applied a 10% mandatory co-payment clause for senior citizen policy.",
+    "policy_text": "Clause 6.3: Co-Payment for Senior Citizens:\nA mandatory co-payment of ten percent (10%) shall apply to each and every admissible claim incurred by an insured person aged sixty (60) years and above. The company's liability shall be calculated after deducting this 10% co-payment from the admissible amount.",
+    "bill_text": "PATIENT NAME: Narain Swamy (Age: 68)\nCLAIM NUMBER: CLM-2024-99014\nPOLICY NUMBER: POL-SEN-11234\nPOLICY TENURE: 36 Months\nSUM INSURED: INR 5,00,000\nHOSPITAL: Manipal Hospital\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Admissible Inpatient Medical & Surgical Expenses: Billed = INR 1,20,000 | Settled = INR 1,08,000 | Deducted = INR 12,000 (TPA Remark: 10% Co-Payment deduction under Clause 6.3 for senior citizens)\n\nTOTAL BILLED: INR 1,20,000\nTOTAL SETTLED: INR 1,08,000\nTOTAL DEDUCTED: INR 12,000",
+    "expected_audit": {
+      "sum_insured": 500000.0,
+      "eligible_room_limit": 5000.0,
+      "actual_room_rent": 4000.0,
+      "ratio": 1.0,
+      "total_billed": 120000.0,
+      "total_settled": 108000.0,
+      "total_deducted": 12000.0,
+      "total_recoverable_amount": 0.0,
+      "line_items": [
+        {
+          "item": "Admissible Inpatient Medical & Surgical Expenses",
+          "billed": 120000.0,
+          "settled": 108000.0,
+          "deducted": 12000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 6.3",
+          "reasoning": "Patient is 68 years old. Clause 6.3 mandates 10% co-payment (10% of INR 1,20,000 = INR 12,000). The deduction is contractual and valid."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-10",
+    "preset_id": "preset_10",
+    "name": "Diagnostic Investigations Applied to Room Rent Proportionate Cut (Disputable)",
+    "category": "Proportionate Deduction & Exemptions",
+    "description": "Insurer wrongly subjected high-end MRI and laboratory diagnostics to proportionate room rent cuts.",
+    "policy_text": "Clause 4.1: Room Rent Limit & Proportionate Cut:\nRoom rent is capped at 1% of Sum Insured per day. Proportionate deduction applies solely to associated medical fees (nursing, doctor visits, OT charges). Diagnostic imaging, laboratory investigations, and pathology tests are strictly exempt from proportionate deductions.",
+    "bill_text": "PATIENT NAME: Pooja Bhatt\nCLAIM NUMBER: CLM-2024-81729\nPOLICY NUMBER: POL-IND-55912\nPOLICY TENURE: 24 Months\nSUM INSURED: INR 3,00,000\nROOM CATEGORY OCCUPIED: INR 6,000 / day (Eligible limit: INR 3,000 / day)\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Room Rent (2 days @ INR 6,000/day): Billed = INR 12,000 | Settled = INR 6,000 | Deducted = INR 6,000 (TPA Remark: Room rent cap 1% SI)\n2. MRI Brain & Specialized Neuro-Diagnostics: Billed = INR 22,000 | Settled = INR 11,000 | Deducted = INR 11,000 (TPA Remark: Proportionate reduction 50% applied)\n\nTOTAL BILLED: INR 34,000\nTOTAL SETTLED: INR 17,000\nTOTAL DEDUCTED: INR 17,000",
+    "expected_audit": {
+      "sum_insured": 300000.0,
+      "eligible_room_limit": 3000.0,
+      "actual_room_rent": 6000.0,
+      "ratio": 0.5,
+      "total_billed": 34000.0,
+      "total_settled": 17000.0,
+      "total_deducted": 17000.0,
+      "total_recoverable_amount": 11000.0,
+      "line_items": [
+        {
+          "item": "Room Rent",
+          "billed": 12000.0,
+          "settled": 6000.0,
+          "deducted": 6000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.1",
+          "reasoning": "Actual rent exceeds 1% limit. 50% room rent settlement is valid."
+        },
+        {
+          "item": "MRI Brain & Specialized Neuro-Diagnostics",
+          "billed": 22000.0,
+          "settled": 11000.0,
+          "deducted": 11000.0,
+          "status": "INVALID",
+          "clause_cited": "Clause 4.1 (Exemption)",
+          "reasoning": "Diagnostic imaging and lab tests are explicitly exempted from proportionate cuts. The INR 11,000 deduction is unlawful and recoverable."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-11",
+    "preset_id": "preset_11",
+    "name": "Maternity Normal Delivery Sub-Limit (Valid Sub-Limit)",
+    "category": "Sub-Limits & Caps",
+    "description": "Maternity delivery expenses capped at contractually defined sub-limit.",
+    "policy_text": "Clause 4.7: Maternity Expenses Coverage:\nMaternity expenses incurred for normal delivery are restricted to a maximum limit of INR 40,000, and for caesarean section to INR 60,000, subject to a 24-month continuous waiting period.",
+    "bill_text": "PATIENT NAME: Ananya Ghosh\nCLAIM NUMBER: CLM-2024-44018\nPOLICY NUMBER: POL-CORP-91028\nPOLICY TENURE: 30 Months\nSUM INSURED: INR 5,00,000\nPROCEDURE: Normal Vaginal Delivery\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Normal Delivery Package & Inpatient Care: Billed = INR 60,000 | Settled = INR 40,000 | Deducted = INR 20,000 (TPA Remark: Capped at Clause 4.7 Normal Delivery sub-limit of INR 40,000)\n\nTOTAL BILLED: INR 60,000\nTOTAL SETTLED: INR 40,000\nTOTAL DEDUCTED: INR 20,000",
+    "expected_audit": {
+      "sum_insured": 500000.0,
+      "eligible_room_limit": 5000.0,
+      "actual_room_rent": 4000.0,
+      "ratio": 1.0,
+      "total_billed": 60000.0,
+      "total_settled": 40000.0,
+      "total_deducted": 20000.0,
+      "total_recoverable_amount": 0.0,
+      "line_items": [
+        {
+          "item": "Normal Delivery Package & Inpatient Care",
+          "billed": 60000.0,
+          "settled": 40000.0,
+          "deducted": 20000.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.7",
+          "reasoning": "Clause 4.7 stipulates a strict sub-limit of INR 40,000 for normal delivery. The INR 20,000 deduction is valid."
+        }
+      ]
+    }
+  },
+  {
+    "id": "TC-12",
+    "preset_id": "preset_12",
+    "name": "Robotic Surgery Technology Charge (Missing Specialized Robotic Endorsement - Insufficient Data)",
+    "category": "Guardrails & Missing Clauses",
+    "description": "Bill lists specialized robotic console surgery charge, but policy has no robotic endorsement.",
+    "policy_text": "Clause 4.1: Room Rent capped at 1% of Sum Insured.\nClause 4.2: ICU capped at 2% of Sum Insured.\nClause 7.1: Waiting periods for specified diseases.",
+    "bill_text": "PATIENT NAME: Tapan Mukherjee\nCLAIM NUMBER: CLM-2024-38910\nPOLICY NUMBER: POL-HEALTH-88190\nPOLICY TENURE: 24 Months\nSUM INSURED: INR 8,00,000\nHOSPITAL: Medanta - The Medicity\n\nITEMIZED BILL & SETTLEMENT SHEET:\n1. Surgeon & Laparoscopic OT Procedure: Billed = INR 70,000 | Settled = INR 70,000 | Deducted = INR 0\n2. Da Vinci Xi Robotic Console & Robotic Instrument Usage Fee: Billed = INR 85,000 | Settled = INR 0 | Deducted = INR 85,000 (TPA Remark: Modern treatment technique not listed in base policy)\n\nTOTAL BILLED: INR 1,55,000\nTOTAL SETTLED: INR 70,000\nTOTAL DEDUCTED: INR 85,000",
+    "expected_audit": {
+      "sum_insured": 800000.0,
+      "eligible_room_limit": 8000.0,
+      "actual_room_rent": 5000.0,
+      "ratio": 1.0,
+      "total_billed": 155000.0,
+      "total_settled": 70000.0,
+      "total_deducted": 85000.0,
+      "total_recoverable_amount": 0.0,
+      "line_items": [
+        {
+          "item": "Surgeon & Laparoscopic OT Procedure",
+          "billed": 70000.0,
+          "settled": 70000.0,
+          "deducted": 0.0,
+          "status": "VALID",
+          "clause_cited": "Clause 4.1",
+          "reasoning": "Covered in full."
+        },
+        {
+          "item": "Da Vinci Xi Robotic Console & Robotic Instrument Usage Fee",
+          "billed": 85000.0,
+          "settled": 0.0,
+          "deducted": 85000.0,
+          "status": "INSUFFICIENT_CLAUSE_DATA",
+          "clause_cited": "Missing Modern Treatment Methods Endorsement",
+          "reasoning": "Under IRDAI modern treatments guidelines, robotic surgery must be covered up to specified sub-limits, but the provided policy document does not include the Modern Treatment Methods schedule. Guardrail triggered: mark as INSUFFICIENT_CLAUSE_DATA."
+        }
+      ]
+    }
+  }
+]
